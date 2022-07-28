@@ -3,7 +3,7 @@ import ExerciseList from "@/components/ExerciseList/ExerciseList";
 
 const Home: NextPage = () => {
   return (
-    <div className="bg-slate-50 h-screen">
+    <div className="h-screen bg-slate-50">
       <ExerciseList title="Routine" />
     </div>
   );

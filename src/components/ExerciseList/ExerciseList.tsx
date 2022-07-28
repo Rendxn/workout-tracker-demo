@@ -12,7 +12,7 @@ const ExerciseList: React.FC<ExerciseListProps> = ({ title }) => {
 
   return (
     <div className="mx-auto max-w-lg p-4">
-      <h1 className="font-bold text-4xl my-6 text-slate-800">
+      <h1 className="my-6 text-4xl font-bold text-slate-800">
         {title || <Skeleton />}
       </h1>
       <div className="grid grid-cols-1 gap-2">
