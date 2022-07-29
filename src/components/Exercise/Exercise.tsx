@@ -16,7 +16,7 @@ const ExerciseCard: React.FC<ExerciseProps> = (props) => {
     >
       <div className="flex flex-col">
         <h2 className="text-xl font-bold text-slate-700">{props.name}</h2>
-        <div className="text-sm tabular-nums text-slate-500">
+        <div className="text-xs tabular-nums text-slate-500">
           {props.sets && <span>{props.sets}</span>}
           {props.reps && (
             <>
