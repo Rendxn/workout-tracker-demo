@@ -9,7 +9,7 @@ export function useExercises() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${API_URL}/exercises`)
+    fetch("/api/exercises")
       .then((res) => res.json())
       .then((data) => {
         setExercises(data);

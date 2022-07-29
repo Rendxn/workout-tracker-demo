@@ -10,7 +10,14 @@ type Exercise = {
 };
 
 const generateRoutine = (numExercises = 6) => {
-  return Array.from({ length: numExercises }, generateExercise);
+  const promise = new Promise<Exercise[]>((resolve, reject) => {
+    // simulate delay
+    setTimeout(() => {
+      return resolve(Array.from({ length: numExercises }, generateExercise));
+    }, 1000);
+  });
+
+  return promise;
 };
 
 const generateExercise = () => {
@@ -21,13 +28,11 @@ const generateExercise = () => {
   } as Exercise;
 };
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Exercise[]>
 ) {
-  const routine = generateRoutine();
+  const routine = await generateRoutine();
 
-  setTimeout(() => {
-    return res.status(200).json(routine);
-  }, 500);
+  return res.status(200).json(routine);
 }
