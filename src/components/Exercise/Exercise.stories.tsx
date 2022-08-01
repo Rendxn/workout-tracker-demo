@@ -5,6 +5,15 @@ export default {
   component: Exercise,
   title: "Components/Exercise",
   argTypes: {},
+  decorators: [
+    (Story) => {
+      return (
+        <div role="list">
+          <Story />
+        </div>
+      );
+    },
+  ],
 } as Meta<ExerciseProps>;
 
 const Template: Story<ExerciseProps> = (args) => <Exercise {...args} />;
