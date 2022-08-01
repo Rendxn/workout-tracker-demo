@@ -9,7 +9,7 @@
     "lint": "next lint",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook",
-    "chromatic": "chromatic --project-token=93f621d839a4"
+    "chromatic": "chromatic"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
