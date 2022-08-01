@@ -10,6 +10,8 @@ const ExerciseCard: React.FC<ExerciseProps> = (props) => {
 
   return (
     <div
+      role="listitem"
+      data-testid={props.name}
       className={`${
         complete ? "bg-emerald-50" : "bg-white"
       } flex items-center justify-between gap-2 rounded-sm px-6 py-4 shadow-sm transition-colors`}
@@ -28,6 +30,8 @@ const ExerciseCard: React.FC<ExerciseProps> = (props) => {
       </div>
       <div>
         <Switch
+          data-testid={`${props.name} - Switch`}
+          name="complete"
           checked={complete}
           onChange={setComplete}
           className={`${

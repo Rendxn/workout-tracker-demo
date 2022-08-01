@@ -1,5 +1,8 @@
 import { Story, Meta } from "@storybook/react";
 import { rest } from "msw";
+import { within, userEvent, findByRole } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
+
 import { Default as ExerciseListDefault } from "@/components/ExerciseList/ExerciseList.stories";
 import Home from "./index.page";
 
@@ -35,4 +38,18 @@ Error.parameters = {
       }),
     ],
   },
+};
+
+export const CompleteExercise = Template.bind({});
+CompleteExercise.parameters = Default.parameters;
+CompleteExercise.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const exerciseName = "Exercise # 2";
+  const itemToComplete = await canvas.findByTestId(exerciseName);
+  const completeButton = await canvas.getByTestId(`${exerciseName} - Switch`);
+
+  await userEvent.click(completeButton);
+
+  await expect(itemToComplete).toHaveClass("bg-emerald-50");
+  await expect(completeButton).toBeChecked();
 };
