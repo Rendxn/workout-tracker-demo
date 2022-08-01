@@ -7,14 +7,14 @@ const Home: NextPage = () => {
 
   if (error) {
     return (
-      <div className="h-screen bg-slate-50">
+      <div className="min-h-screen bg-slate-50">
         <div className="container mx-auto">Something went wrong 😔</div>
       </div>
     );
   }
 
   return (
-    <div className="h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50">
       <ExerciseList title="Routine" exercises={exercises} loading={loading} />
     </div>
   );

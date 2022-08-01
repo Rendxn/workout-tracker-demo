@@ -10,6 +10,7 @@ const ExerciseCard: React.FC<ExerciseProps> = (props) => {
 
   return (
     <div
+      tabIndex={0}
       role="listitem"
       data-testid={props.name}
       className={`${

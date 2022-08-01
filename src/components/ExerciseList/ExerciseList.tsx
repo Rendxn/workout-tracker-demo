@@ -17,11 +17,13 @@ const ExerciseList: React.FC<ExerciseListProps> = ({
   return (
     <div className="mx-auto max-w-lg p-4">
       <h1 className="my-6 text-4xl font-bold text-slate-800">
-        {loading ? <Skeleton /> : title}
+        {loading ? <Skeleton /> : title || "Routine"}
       </h1>
-      <div className="grid grid-cols-1 gap-2">
+      <div className="grid grid-cols-1 gap-2" role="list">
         {loading ? (
-          <ExerciseListSkeleton />
+          <div role="listitem">
+            <ExerciseListSkeleton />
+          </div>
         ) : (
           exercises?.map((exercise) => (
             <ExerciseCard
