@@ -1,6 +1,5 @@
 import { Story, Meta } from "@storybook/react";
 import { rest } from "msw";
-import { Exercise } from "@@/types";
 import { Default as ExerciseListDefault } from "@/components/ExerciseList/ExerciseList.stories";
 import Home from "./index.page";
 
@@ -12,7 +11,7 @@ export default {
 const Template: Story = (args) => <Home {...args} />;
 
 const api = (resource: string): string => {
-  const API_URL = process.env.STORYBOOK_API_URL || "";
+  const API_URL = process.env.STORYBOOK_API_URL || "http://localhost:3000/";
   return new URL(resource, API_URL).toString();
 };
 
