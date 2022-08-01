@@ -1,30 +1,37 @@
 import ExerciseCard from "@/components/Exercise/Exercise";
 import Skeleton from "react-loading-skeleton";
-import { useExercises } from "@/hooks/useExercises";
 import ExerciseListSkeleton from "./ExerciseListSkeleton";
+import { Exercise } from "@@/types";
 
-interface ExerciseListProps {
+export interface ExerciseListProps {
   title?: string;
+  exercises: Exercise[] | undefined;
+  loading?: boolean;
 }
 
-const ExerciseList: React.FC<ExerciseListProps> = ({ title }) => {
-  const { exercises, loading } = useExercises();
-
+const ExerciseList: React.FC<ExerciseListProps> = ({
+  title,
+  exercises,
+  loading,
+}) => {
   return (
     <div className="mx-auto max-w-lg p-4">
       <h1 className="my-6 text-4xl font-bold text-slate-800">
-        {title || <Skeleton />}
+        {loading ? <Skeleton /> : title}
       </h1>
       <div className="grid grid-cols-1 gap-2">
-        {loading && <ExerciseListSkeleton />}
-        {exercises?.map((exercise) => (
-          <ExerciseCard
-            key={exercise.name}
-            name={exercise.name}
-            sets={exercise.sets}
-            reps={exercise.reps}
-          />
-        ))}
+        {loading ? (
+          <ExerciseListSkeleton />
+        ) : (
+          exercises?.map((exercise) => (
+            <ExerciseCard
+              key={exercise.name}
+              name={exercise.name}
+              sets={exercise.sets}
+              reps={exercise.reps}
+            />
+          ))
+        )}
       </div>
     </div>
   );

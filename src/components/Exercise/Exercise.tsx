@@ -1,4 +1,4 @@
-import { Exercise } from "@/types";
+import { Exercise } from "@@/types";
 import { useState } from "react";
 import { Switch } from "@headlessui/react";
 export interface ExerciseProps extends Exercise {
