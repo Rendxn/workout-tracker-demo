@@ -28,4 +28,5 @@ module.exports = {
     config.resolve.plugins = [new tsconfigPathsPlugin()];
     return config;
   },
+  staticDirs: ["../public"],
 };
