@@ -58,5 +58,8 @@
   "_id": "workout-tracker-demo@0.1.0",
   "msw": {
     "workerDirectory": "public"
+  },
+  "volta": {
+    "node": "16.16.0"
   }
 }
