@@ -21,9 +21,7 @@ const ExerciseList: React.FC<ExerciseListProps> = ({
       </h1>
       <div className="grid grid-cols-1 gap-2" role="list">
         {loading ? (
-          <div role="listitem">
-            <ExerciseListSkeleton />
-          </div>
+          <ExerciseListSkeleton />
         ) : (
           exercises?.map((exercise) => (
             <ExerciseCard

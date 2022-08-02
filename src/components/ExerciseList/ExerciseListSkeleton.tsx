@@ -5,7 +5,10 @@ interface ExerciseListSkeletonProps {}
 const ExerciseListSkeleton: React.FC<ExerciseListSkeletonProps> = () => {
   return (
     <>
-      <div className="flex flex-col rounded-sm bg-white px-6 py-4 shadow-sm">
+      <div
+        className="flex flex-col rounded-sm bg-white px-6 py-4 shadow-sm"
+        role="listitem"
+      >
         <h2 className="text-xl font-bold text-slate-700">
           <Skeleton width="10ch" />
         </h2>
@@ -13,7 +16,10 @@ const ExerciseListSkeleton: React.FC<ExerciseListSkeletonProps> = () => {
           <Skeleton width="3ch" />
         </div>
       </div>
-      <div className="flex flex-col rounded-sm bg-white px-6 py-4 shadow-sm">
+      <div
+        className="flex flex-col rounded-sm bg-white px-6 py-4 shadow-sm"
+        role="listitem"
+      >
         <h2 className="text-xl font-bold text-slate-700">
           <Skeleton width="10ch" />
         </h2>
@@ -21,7 +27,10 @@ const ExerciseListSkeleton: React.FC<ExerciseListSkeletonProps> = () => {
           <Skeleton width="3ch" />
         </div>
       </div>
-      <div className="flex flex-col rounded-sm bg-white px-6 py-4 shadow-sm">
+      <div
+        className="flex flex-col rounded-sm bg-white px-6 py-4 shadow-sm"
+        role="listitem"
+      >
         <h2 className="text-xl font-bold text-slate-700">
           <Skeleton width="10ch" />
         </h2>
@@ -29,7 +38,10 @@ const ExerciseListSkeleton: React.FC<ExerciseListSkeletonProps> = () => {
           <Skeleton width="3ch" />
         </div>
       </div>
-      <div className="flex flex-col rounded-sm bg-white px-6 py-4 shadow-sm">
+      <div
+        className="flex flex-col rounded-sm bg-white px-6 py-4 shadow-sm"
+        role="listitem"
+      >
         <h2 className="text-xl font-bold text-slate-700">
           <Skeleton width="10ch" />
         </h2>
@@ -37,7 +49,10 @@ const ExerciseListSkeleton: React.FC<ExerciseListSkeletonProps> = () => {
           <Skeleton width="3ch" />
         </div>
       </div>
-      <div className="flex flex-col rounded-sm bg-white px-6 py-4 shadow-sm">
+      <div
+        className="flex flex-col rounded-sm bg-white px-6 py-4 shadow-sm"
+        role="listitem"
+      >
         <h2 className="text-xl font-bold text-slate-700">
           <Skeleton width="10ch" />
         </h2>
@@ -45,7 +60,10 @@ const ExerciseListSkeleton: React.FC<ExerciseListSkeletonProps> = () => {
           <Skeleton width="3ch" />
         </div>
       </div>
-      <div className="flex flex-col rounded-sm bg-white px-6 py-4 shadow-sm">
+      <div
+        className="flex flex-col rounded-sm bg-white px-6 py-4 shadow-sm"
+        role="listitem"
+      >
         <h2 className="text-xl font-bold text-slate-700">
           <Skeleton width="10ch" />
         </h2>
