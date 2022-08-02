@@ -16,14 +16,14 @@ jobs:
         run: npx playwright install --with-deps
       - name: Build Storybook
         run: npm run build-storybook --quiet
+        env:
+          STORYBOOK_API_URL: ${{ secrets.API_URL }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.API_URL }}
       - name: Serve Storybook and run tests
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
             "npx wait-on tcp:6006 && npm run test-storybook"
-        env:
-          STORYBOOK_API_URL: ${{ secrets.API_URL }}
-          NEXT_PUBLIC_API_URL: ${{ secrets.API_URL }}
 
   visual-and-composition:
     runs-on: ubuntu-latest

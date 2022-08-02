@@ -1,7 +1,7 @@
 import { Exercise } from "@@/types";
 import { useEffect, useState } from "react";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/";
 const api = (resource: string): string => {
   return new URL(resource, API_URL).toString();
 };
