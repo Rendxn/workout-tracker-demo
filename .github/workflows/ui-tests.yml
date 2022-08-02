@@ -23,6 +23,7 @@ jobs:
             "npx wait-on tcp:6006 && npm run test-storybook"
         env:
           STORYBOOK_API_URL: ${{ secrets.API_URL }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.API_URL }}
 
   visual-and-composition:
     runs-on: ubuntu-latest
@@ -38,3 +39,4 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
         env:
           STORYBOOK_API_URL: ${{ secrets.API_URL }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.API_URL }}
